@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+	<style>
+	:root{
+		--green:#50E3C2;
+		--fm:48px;
+		--fm2: 24px;
+		--gray:rgba(0,0,0,.3);
+		--gray2:rgba(0,0,0,.1);
+	}
+	.header{
+		width: 960px;
+		height:2000px;
+		margin:auto;
+		font-family: 'Roboto', sans-serif;
+
+	}
+	.hearder:after{
+		content: '';
+		display: block;
+		height: 0;
+		width:100%;
+		clear:both;
+	}
+	.title{
+		font-size: var(--fm);
+		position: relative;
+		height:36px;
+		line-height: 36px;
+		z-index: 2;
+		/*outline:#FA8000 dashed 10px;*/
+
+	}
+	.title:before,.title:after{
+		font-size: var(--fm);
+		position: absolute;
+		content: attr(data-content);
+		overflow: hidden;
+		/*outline:#FA8000 dashed 10px;*/
+		
+	}
+	.title:before{	
+		color:var(--gray);
+		height:14px;
+		transform: translate(0%,-75%);
+	}
+	.title:after{
+		color:var(--gray2);
+		height:10px;
+		transform: translate(-100%,-180%);
+	}
+	.num{
+		font-size: var(--fm);
+		position: absolute;
+		z-index: 2;
+	}
+	.striped{
+		position: absolute;
+		z-index: 1;
+		width: 200px;
+		height: 80px;
+		background: repeating-linear-gradient(
+			135deg,
+			var(--green) 0px,
+			var(--green) 20px,
+			transparent 20px,
+			transparent 40px,
+			var(--green) 40px,
+			var(--green) 60px,
+			transparent 60px,
+			transparent 80px
+			);
+		background-size: 56px 56px;
+	}
+	.subtitle{
+		font-size: var(--fm2);
+		font-family: 700;
+		font-style: italic;
+		z-index: 2;
+		position: absolute;
+	}
+	.bordered{
+		position: absolute;
+		border: 20px solid var(--green);
+		z-index: -2;
+	}
+	.block{
+		position: absolute;
+		background-color: var(--green);
+		z-index: -1;
+	}
+	.sec{
+		width:50%;
+		float: left;
+	}
+	
+	.sec .item-content{
+		position: relative;
+		padding-bottom: 83.3333%;
+	}
+	.sec .img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.sec .img img{
+		width: 100%;
+		height: 100%;
+	}
+	.sec1 .img{
+		width: 100%;
+		height: 100%;
+	}
+	.sec2 .img{
+		width: 50%;
+		height: 50%;
+		top:25%;
+		right:25%;
+	}
+	.sec3 .img{
+		width: 100%;
+		height: 50%;
+	}
+	.sec4 .img{
+		width: 50%;
+		height: 100%;
+		right:0;
+	}
+	.sec5 .img{
+		width: 50%;
+		height: 50%;
+		right:0;
+		transform: scaleX(-1);
+	}
+	.sec6 .img{
+		width: 100%;
+		height: 100%;
+	}
+	.sec7 .img{
+		width: 50%;
+		height: 100%;
+	}
+	.sec1 .item-content,.sec2 .item-content{
+		margin-top: 15%;
+	}
+	.sec3 .item-content,.sec4 .item-content,.sec6 .item-content{
+		margin-top: 45.667%;
+	}
+	.sec7 .item-content{
+		margin-top: -41.667%;
+		margin-bottom: 15%;
+		overflow: hidden;
+	}
+	.sec1 .title{
+		top: 0;
+		left:0;
+		transform: translate(0%,85%);
+	}
+	.sec2 .title{
+		top: 0;
+		left:0;
+		transform: translate(50%,980%);
+	}
+	.sec3 .title{
+		top:2px;
+		left:47.5%;
+	}
+	.sec4 .title{
+		top:-105px;
+		left:-4%;
+		transform: rotate(270deg);
+	}
+	.sec5 .title{
+		top:100px;
+		left:12%;
+	}
+	.sec6 .title{
+		top:2px;
+		left:25%;
+	}
+	.sec7 .title{
+		top:265px;
+		left:4%;
+		transform: rotate(90deg);
+	}
+	.sec1 .subtitle{
+		bottom:-50px;
+		right:-75px;
+		transform: rotate(90deg);
+	}
+	.sec2 .subtitle{
+		top:18%;
+		left:20%;
+		
+	}
+	.sec3 .subtitle{
+		bottom:29%;
+		left:5%;
+	}
+	.sec4 .subtitle{
+		top:-50px;
+		right:0;
+		transform: rotate(90deg);
+	}
+	.sec5 .subtitle{
+		top:10%;
+		right:-29%;
+	}
+	.sec6 .subtitle{
+		bottom:-21%;
+		right:35%;
+	}
+	.sec7 .subtitle{
+		top:3%;
+	}
+	.sec1 .num{
+		bottom: -27%;
+	}
+	.sec2 .num{
+		top:0;
+		right:0;
+	}
+	.sec3 .num{
+		bottom:23%;
+		right:-12%;
+	}
+	.sec4 .num{
+		bottom:-17%;
+		right:51%;
+	}
+	.sec5 .num{
+		bottom:34%;
+		right:65%;
+	}
+	.sec6 .num{
+		bottom:33%;
+		left:-12%;
+	}
+	.sec7 .num{
+		bottom:-5%;
+		right:30%;
+	}
+	.sec1 .bordered{
+		width: 50%;
+		height: 50%;
+		top:0;
+		right:-10%;
+	}
+	.sec2 .bordered{
+		width: 50%;
+		height: 50%;
+		top:0;
+		right:0;
+	}
+	.sec3 .bordered{
+		width: 50%;
+		height: 50%;
+		bottom:28%;
+		right:-13%;
+	}
+	.sec4 .bordered{
+		width: 45%;
+		height: 45%;
+		bottom:70%;
+		right:15%;
+	}
+	.sec5 .bordered{
+		width: 45%;
+		height: 25%;
+		bottom:26%;
+		left:23%;
+	}
+	.sec6 .bordered{
+		width: 100%;
+		height: 25%;
+		bottom:-22%;
+		left:0%;
+	}
+	.sec7 .bordered{
+		width: 50%;
+		height:60%;
+		top:0%;
+		left:12%;
+	}
+	.sec1 .striped{
+		bottom: -21%;
+		left:13%;
+	}
+	.sec4 .striped{
+		width:50%;
+		right:0;
+		bottom:-17%;
+	}
+	.sec5 .striped{
+		top:3%;
+		left:20%;
+	}
+	.sec2 .block{
+		width: 50%;
+		height: 50%;
+		top:15%;
+		right:15%;
+	}
+	.sec3 .block{
+		width: 68%;
+		height: 20%;
+		top:0;
+		left:0;
+	}
+	.sec6 .block{
+		width: 20%;
+		height: 50%;
+		bottom:-10%;
+		left:-12%;
+	}
+	.sec7 .block{
+		width: 25%;
+		height: 50%;
+		bottom:-5%;
+		right:30%;
+	}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="sec sec1">
+			<div class="item-content">
+				<p class="subtitle">Men’s outfit</p>
+				<h2 class="title" data-content="LINEN_BLAZER">LINEN_BLAZER</h2>
+				<p class="num">01</p>		
+				<div class="striped"></div>
+				<div class="bordered"></div>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1513827379601-9dba5099a3f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+				</div>
+			</div>		
+		</div>
+		<div class="sec  sec2">
+			<div class="item-content">
+				<p class="subtitle">Men’s basics</p>
+				<h2 class="title" data-content="FREELIFT">FREELIFT</h2>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1519406686401-e9ef2420c15b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
+				</div>
+				<p class="num">02</p>		
+				<div class="block"></div>
+				<div class="bordered"></div>
+			</div>
+			
+		</div>
+		<div class="sec sec3">
+			<div class="item-content">
+				<p class="subtitle">Men’s pattern shirts</p>
+				<h2 class="title" data-content="SUPER_SKINNY">SUPER_SKINNY</h2>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
+				</div>
+				<p class="num">03</p>		
+				<div class="block"></div>
+				<div class="bordered"></div>
+			</div>
+			
+		</div>
+		<div class="sec  sec4">
+			<div class="item-content">
+				<p class="subtitle">Men’s cadual</p>
+				<h2 class="title" data-content="DENIM">DENIM</h2>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1484516758160-69878111a911?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=387&q=80" alt="">
+				</div>
+				<p class="num">04</p>		
+				<div class="striped"></div>
+				<div class="bordered"></div>
+			</div>
+		</div>
+		<div class="sec sec5">
+			<div class="item-content">
+				<p class="subtitle">Men’s jacket</p>
+				<h2 class="title" data-content="SWEATSHIRTS">SWEATSHIRTS</h2>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1525448198276-222de3961638?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
+				</div>
+				<p class="num">05</p>		
+				<div class="striped"></div>
+				<div class="bordered"></div>
+			</div>
+		</div>
+		<div class="sec sec6">
+			<div class="item-content">
+				<p class="subtitle">Men’s classic</p>
+				<h2 class="title" data-content="VINTAGE_DENIM">VINTAGE_DENIM</h2>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1519406709381-c1f293304b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+				</div>
+				<p class="num">06</p>		
+				<div class="block"></div>
+				<div class="bordered"></div>
+			</div>
+		</div>
+		<div class="sec sec7">
+			<div class="item-content">
+				<p class="subtitle">Men’s shirts</p>
+				<h2 class="title" data-content="EDITION">EDITION</h2>
+				<div class="img">
+					<img src="https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+				</div>
+				<p class="num">07</p>		
+				<div class="block"></div>
+				<div class="bordered"></div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+</html>
