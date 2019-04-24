@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
+	<style>
+	.header{
+		display:grid;
+		grid-template-rows:repeat(20, 120px );
+		grid-template-columns:repeat(20, 100px );
+		font-family: 'Roboto', sans-serif;
+	}
+	.top-item {	
+		grid-area: 1 / 1 / 2 / 3;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+	}
+	.top-item .icon{
+		margin-left:10px;
+		background-color: black; 
+		color:white;
+		font-size: var(--fm3);
+		padding: 4px;
+	}
+	.sec img{
+		width: 100%;
+		height: 100%;	
+	}
+	.sec1 {
+		grid-area: 3 / 5 / 7 / 13;
+		overflow: hidden;
+	}
+	.sec1 img{
+		transform: translateY(-35%);
+	}
+	.sec2 {
+		grid-area: 2 / 3 / 4 / 7;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+	}
+	.block{
+		background-color: var(--green);
+		z-index: -2;
+		width:70%;
+		height:70%;	
+	}
+	.sec3 {
+		grid-area: 5 / 7 / 8 / 15;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+	}
+	.bordered{
+		border: 20px solid var(--green);
+		z-index: -2;
+		width:70%;
+		height:70%;	
+	}
+	.striped{
+		z-index: 1;
+		width: 200px;
+		height: 80px;
+		background: repeating-linear-gradient(
+			135deg,
+			var(--green) 0px,
+			var(--green) 20px,
+			transparent 20px,
+			transparent 40px,
+			var(--green) 40px,
+			var(--green) 60px,
+			transparent 60px,
+			transparent 80px
+			);
+		background-size: 56px 56px;
+	}
+	.text{
+		font-size: var(--fm);
+		z-index: 1;
+		display: flex;
+	}
+	.text1{
+		grid-area: 2 / 11 / 3 / 13;	
+		align-items:flex-end;
+		justify-content: center;
+	}
+	.text2{
+		grid-area: 3 / 13 / 4 / 14;
+		align-items:flex-end;
+		justify-content: flex-start;
+		transform: rotate(90deg);
+	}
+	.text3{
+		grid-area: 7 / 5 / 8 / 6;
+		align-items:flex-end;
+		justify-content: flex-end;
+		transform: rotate(180deg);
+	}
+	.text4{
+		grid-area: 6 / 4 / 7 / 5;
+		align-items:flex-end;
+		justify-content: flex-start;
+		transform: rotate(270deg);
+	}
+	.subtitle{	
+		/*outline: blue 8px solid;*/
+		font-size: var(--fm2);
+		font-family: 700;
+		font-style: italic;
+		z-index: 1;
+		grid-area: 8 / 2/ 9 /9;
+		transform: rotate(270deg);
+		display: flex;
+		align-items:flex-start;
+		justify-content: flex-start;	
+	}
+	.text5{
+		grid-area: 9 / 6/ 10 /10;
+		display: flex;
+		align-items:flex-end;
+	}
+	.simple_content{
+		grid-area: 10 / 6/ 11 /11;
+		font-size: var(--fm2);
+	}
+	.content{
+		grid-area: 10 / 6/ 13 /13;
+		display: flex;
+		align-items:center;
+		font-size: 16px;
+	}
+	.sec4 {
+		grid-area: 15 / 5 / 19 / 10;
+		overflow: hidden;
+	}
+	.sec5 {
+		grid-area: 17 / 9 / 20 / 13;
+		overflow: hidden;
+		z-index: -1;
+	}
+	.sec5 img{
+		transform: translateY(-15%);
+	}
+	.sec6 {
+		grid-area: 16 / 3 / 19 / 12;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+	}
+	.sec7 {
+		grid-area: 16 / 11 / 19 / 15;
+		display: flex;
+		align-items:flex-start;
+		justify-content: center;
+	}
+	.sec8 {
+		grid-area: 19 / 6 / 21 / 12;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+	}
+
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="top-item">
+			<a href="index.html">
+				<i class="fas fa-arrow-left text-dark"></i>
+			</a>
+			<div class="icon">CCCLOTHES</div>
+		</div>
+		<div class="sec sec1">
+			<div class="img">
+				<img src="https://images.unsplash.com/photo-1519406709381-c1f293304b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+			</div>		
+		</div>
+		<div class="text text1">VINTAGE</div>	
+		<div class="text text2">DENIM</div>
+		<div class="text text3">TOP</div>
+		<div class="text text4">06</div>		
+		<div class="sec2">
+			<div class="block"></div>
+		</div>
+		<div class="sec3">
+			<div class="bordered"></div>
+		</div>
+		<div class="subtitle">PRODUCT DETAILS</div>
+		<div class="text text5">VINTAGE DENIM</div>
+		<div class="simple_content">Kogi Cosby sweater ethical squid irony </div>
+		<div class="content">
+			<p>
+				In the tumultuous business of cutting-in and attending to a whale, there is much running backwards and forwards among the crew. Now hands are wanted here, and then again hands are wanted there. There is no staying in any one place; for at one and the same time everything has to be done everywhere. It is much the same with him who endeavors the description of the scene. 
+
+				We must now retrace our way a little. It was mentioned that upon first breaking ground in the whale's back, the blubber-hook was inserted into the original hole there cut by the spades of the mates. But how did so clumsy and weighty a mass as that same hook get fixed in that hole? It was inserted there by my particular friend Queequeg, whose duty it was, as harpooneer.
+			</p>
+		</div>
+		<div class="sec sec4">
+			<div class="img">
+				<img src="https://images.unsplash.com/photo-1519406686401-e9ef2420c15b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
+			</div>		
+		</div>
+		<div class="sec sec5">
+			<div class="img">
+				<img src="https://images.unsplash.com/photo-1519406728390-b536d7be138f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+			</div>		
+		</div>
+		<div class="sec6">
+			<div class="bordered"></div>
+		</div>
+		<div class="sec7">
+			<div class="block"></div>
+		</div>
+		<div class="sec8">
+			<div class="striped"></div>
+		</div>
+	</div>	
+</body>
+</html>
